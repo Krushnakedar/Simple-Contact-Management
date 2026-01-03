@@ -18,7 +18,7 @@ const ShowContact = () => {
   useEffect(() => {
     const fetchContact = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/contacts/${id}`);
+        const res = await axios.get(`https://simple-contact-management-2.onrender.com/api/contacts/${id}`);
         setContact(res.data);
       } catch (err) {
         console.error("Error fetching contact", err);
@@ -32,7 +32,7 @@ const ShowContact = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/api/contacts/${id}`, contact);
+      await axios.put(`https://simple-contact-management-2.onrender.com/api/contacts/${id}`, contact);
       setStatus("Updated successfully!");
     } catch (err) {
       setStatus("Update failed!");
