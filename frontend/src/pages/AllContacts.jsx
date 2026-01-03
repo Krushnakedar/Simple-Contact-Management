@@ -13,7 +13,7 @@ const AllContacts = () => {
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/contacts");
+      const res = await axios.get("https://simple-contact-management-2.onrender.com/api/contacts");
       if (Array.isArray(res.data)) setContacts(res.data);
     } catch (err) {
       console.error("Error fetching contacts", err);
@@ -27,7 +27,7 @@ const AllContacts = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this contact?")) return;
     try {
-      await axios.delete(`http://localhost:3000/api/contacts/${id}`);
+      await axios.delete(`https://simple-contact-management-2.onrender.com/api/contacts/${id}`);
       fetchContacts();
     } catch (err) {
       console.error("Failed to delete contact", err);
