@@ -39,7 +39,7 @@ const NewContactForm = () => {
     if (!isValid) return;
 
     try {
-      const res = await axios.post("http://localhost:3000/api/contacts", form);
+      const res = await axios.post("https://simple-contact-management-2.onrender.com/api/contacts", form);
       alert(res.data.message);
       navigate("/");
     } catch (err) {
